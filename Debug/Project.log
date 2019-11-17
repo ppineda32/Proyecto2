@@ -1,0 +1,3 @@
+﻿  Assembling AddTwo.asm...
+\masm32\include\masm32rt.inc(33): warning A4011: multiple .MODEL directives found : .MODEL ignored
+  Project.vcxproj -> C:\Users\Akabane\Downloads\Project32_VS2019\Debug\Project.exe
