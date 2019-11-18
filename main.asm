@@ -1,9 +1,3 @@
-;// AddTwo.asm - adds two 32-bit integers.
-;// Chapter 3 example
-
-.386
-.model flat, stdcall
-.stack 4096
 
 include \masm32\include\masm32rt.inc
 
@@ -32,8 +26,14 @@ main proc
                .Until sdword ptr ecx > 0
           neg cl
           sub cl, 2
-          .Break .if ecx == VK_ESCAPE
-          print str$(ecx), " was pressed", 13, 10
+          .if ecx == VK_ESCAPE
+               .break
+          .elseif ecx == VK_SPACE || ecx == VK_RETURN
+               print str$(ecx), " was pressed", 13, 10
+               print "Grabar", 13, 10
+          .else
+               print str$(ecx), " was pressed", 13, 10
+          .endif
      .Until 0
      print "bye"
 
